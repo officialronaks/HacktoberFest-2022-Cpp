@@ -4,10 +4,18 @@ using namespace std;
  
 
 int linearSearch_recursive(int arr[],int size ,int element)
-{  
-    // enter your code here
+{
+    if (size == 0) {
+        return -1;
+    }
+    else if (arr[size - 1] == element) {
+        return size - 1;
+    }
+    else {
+        int ans = linearSearch_recursive(arr, size - 1, element);
+        return ans;
+    }
 }
- 
 // Driver Code
 int main()
 {   
