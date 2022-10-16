@@ -3,11 +3,19 @@
 using namespace std;
  
 
-int linearSearch_recursive(int arr[],int size ,int element)
-{  
-    // enter your code here
+int linearSearch__recursive(int arr[],int size ,int element)
+{
+    if (size == 0) {
+        return -1;
+    }
+    else if (arr[size - 1] == element) {
+        return size - 1;
+    }
+    else {
+        int ans = linearSearch__recursive(arr, size - 1, element);
+        return ans;
+    }
 }
- 
 // Driver Code
 int main()
 {   
