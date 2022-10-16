@@ -3,7 +3,7 @@
 using namespace std;
  
 
-int linearSearch_recursive(int arr[],int size ,int element)
+int linearSearch__recursive(int arr[],int size ,int element)
 {
     if (size == 0) {
         return -1;
@@ -12,7 +12,7 @@ int linearSearch_recursive(int arr[],int size ,int element)
         return size - 1;
     }
     else {
-        int ans = linearSearch_recursive(arr, size - 1, element);
+        int ans = linearSearch__recursive(arr, size - 1, element);
         return ans;
     }
 }
