@@ -2,10 +2,52 @@
 #include <iostream>
 using namespace std;
  
+ int partition(int arr[], int start, int end)
+{
+ 
+    int pivot = arr[start];
+ 
+    int count = 0;
+    for (int i = start + 1; i <= end; i++) {
+        if (arr[i] <= pivot)
+            count++;
+    }
+
+    int pivotIndex = start + count;
+    swap(arr[pivotIndex], arr[start]);
+ 
+    int i = start, j = end;
+ 
+    while (i < pivotIndex && j > pivotIndex) {
+ 
+        while (arr[i] <= pivot) {
+            i++;
+        }
+ 
+        while (arr[j] > pivot) {
+            j--;
+        }
+ 
+        if (i < pivotIndex && j > pivotIndex) {
+            swap(arr[i++], arr[j--]);
+        }
+    }
+ 
+    return pivotIndex;
+}
 
 void quickSort_recursion(int arr[],int begin,int end)
 {  
          // enter your code here
+         if (begin >= end)
+            return;
+ 
+    
+    int p = partition(arr, begin, end);
+ 
+    quickSort_recursion(arr, begin, p - 1);
+ 
+    quickSort_recursion(arr, p + 1, end);
 }
 
 
