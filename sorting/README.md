@@ -13,6 +13,7 @@ This repository contains a collection of programs based on the concepts of sorti
 - quick_sort_recursion
 - selection_sort
 - selection_sort_recursion
+- heap_sort
 
 
 ## How to Contribute
